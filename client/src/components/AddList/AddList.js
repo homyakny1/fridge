@@ -4,8 +4,8 @@ import "./style.css";
 
 class AddList extends Component{
     state = {
-          itemName : "",
-      };
+      itemName : "",
+    };
   
     componentDidMount() {
       this.loadItems();
@@ -15,8 +15,8 @@ class AddList extends Component{
     //entering username and password
     handleChange = event => {
       const { name, value } = event.target;
-      console.log(event.target);
       this.setState({[name]: value});
+      console.log(this.state);
     };
   
   
@@ -52,7 +52,7 @@ render() {
   <div className='row'>
         <div className='col-sm-12'>
             <div className="input-group mb-3" onSubmit={this.handleSubmit}>
-                <input type="text" className="form-control" placeholder="Add product" value = {this.value} onChange = {this.handleChange} />                
+                <input type="text" className="form-control" placeholder="Add product" name="itemName" value = {this.state.itemName} onChange = {this.handleChange} />                
                 <div className="input-group-append">
                     <button className="btn btn-outline-secondary" type="button" onClick = {this.handleSubmit} >Add to list</button>
                 </div>
@@ -62,6 +62,6 @@ render() {
   
    )
 }
-  }
+}
 
   export default AddList;
