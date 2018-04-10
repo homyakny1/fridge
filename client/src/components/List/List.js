@@ -1,9 +1,10 @@
 import React from 'react';
 import "./style.css";
+import SwipeToDelete from 'react-swipe-to-delete-component';
 
-const List = (props) =>{
-	return (
-    <div className='row'>
+const List = () => {
+    return(
+        <div className='row'>
         <div className='col-sm-12'>
             <div className="card">
                 <div className="card-body">
@@ -23,7 +24,24 @@ const List = (props) =>{
             </div> 
         </div>
     </div>
-	);
+    )
 }
+// const data = [
+//     {id: 1, text: 'Best part of the day ☕', date: '5.03.2016'},
+//     {id: 2, text: 'What\'s everybody reading?', date: '3.03.2016'},
+//     {id: 3, text: 'End of summer reading list', date: '1.03.2016'}
+//   ];
+
+// const List = (data.map.item) => {
+// 	return (
+//         <SwipeToDelete key={item.id}>
+//             <a className="list-group-item">
+//                 <h4 className="list-group-item-heading">{item.date}</h4>
+//                 <p className="list-group-item-text">{item.text}</p>
+//             </a>
+//         </SwipeToDelete>
+// 	    )
+//     }
 
 export default List;
+
