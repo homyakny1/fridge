@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 import API from "../../utils/API";
 import "./style.css";
+import SwipeToDelete from 'react-swipe-to-delete-component';
+import List from '../List'
+
 
 class AddList extends Component{
     state = {
       itemName : "",
+      data: [],
+      img: ""
+    
     };
   
     componentDidMount() {
@@ -16,16 +22,19 @@ class AddList extends Component{
     handleChange = event => {
       const { name, value } = event.target;
       this.setState({[name]: value});
-      console.log(this.state);
     };
   
   
     //logging in
     handleSubmit = event => {
       event.preventDefault();
+      console.log(this.state)
       //call a sign In function
-      const newItem = {itemName: this.state.itemName};
-      const {name} = event.target;
+      // const newItem = {itemName: this.state.itemName};
+      const newItem = {
+        itemName: this.state.itemName,
+        img: 'https://upload.wikimedia.ox`rg/wikipedia/commons/a/ac/No_image_available.svg',
+      }
       this.addItem(newItem);
     };
   
@@ -40,15 +49,20 @@ class AddList extends Component{
       API.getItems()
         .then(res =>
           this.setState({
-            itemName: res.data,
+            data: res.data,
   
           })
         )
       .catch(err => console.log(err));
     };
 
+   onDelete = () => console.info('Deleted');
+   onCancel = () => console.info('Canceled');
+
+    
 render() {
    return ( 
+     <div>
   <div className='row'>
         <div className='col-sm-12'>
             <div className="input-group mb-3" onSubmit={this.handleSubmit}>
@@ -59,6 +73,14 @@ render() {
             </div>
             </div>
         </div>
+        <div className='row'>
+        <div className='col-sm-12'>
+        <List data = {this.state.data} onDelete = {this.onDelete} onCancel = {this.onCancel} />
+        </div>
+      </div>
+      </div>
+  
+
   
    )
 }

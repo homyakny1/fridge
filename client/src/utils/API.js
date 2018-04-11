@@ -17,6 +17,7 @@ export default {
   },
   // Saves a book to the database
   saveItem: function(itemData) {
+    console.log(itemData);
     return axios.post("/api/", itemData);
   },
   // getNyData: function(start) {
