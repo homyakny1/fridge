@@ -1,9 +1,15 @@
 import axios from "axios";
-const BASEURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
-const APIKEY = "api-key=0c5ec128b06d45328a725462356412bb";
+import { ContentSelectAll } from "material-ui";
+const GIPHYURL = "https://api.giphy.com/v1/gifs/search?";
+const GIPHYAPIKEY = "api_key=h3ZfcokVkTszyvNg8AB93XpOtTMKzM7B";
+
+const YUMMLYURL = 'http://api.yummly.com/v1/recipes?';
+const YAMMLYAPPID ='_app_id=22821bab';
+const YAMMLYAPIKEY='&_app_key=aed0010220fcd1499bddfe34c263d253';
+
+//api.giphy.com/v1/gifs/search?api_key=h3ZfcokVkTszyvNg8AB93XpOtTMKzM7B&q=apple&limit=25&offset=0&rating=G&lang=en
 
 export default {
-  // Gets all books
   getItems: function() {
     return axios.get("/api/");
   },
@@ -13,25 +19,26 @@ export default {
   },
   // Deletes the book with the given id
   deleteItem: function(id) {
-    return axios.delete("/api/recipes/" + id);
+    console.log(id);
+    return axios.delete("/api/" + id);
   },
   // Saves a book to the database
   saveItem: function(itemData) {
-    console.log(itemData);
+    console.log(itemData)
     return axios.post("/api/", itemData);
   },
-  // getNyData: function(start) {
-  // return axios.get("/api/nyt" + start);
-  //},
-  postNyData: function(formData) {
-    return axios.post("/api/nyt", formData);
-  },
-  getNyData: function(start, end, topic) {
-    const myBegin = "&begin_date=" + start;
-    const myEnd = "&end_date=" + end;
+ 
+
+
+  getImages: function(topic) {
+    console.log('API TOPIC',topic)
     const myQuery = "&q=" + topic;
-    const URL = BASEURL + APIKEY + myQuery + myBegin + myEnd;
-    console.log(URL);
+    const URL = GIPHYURL + GIPHYAPIKEY + myQuery + "&limit=1&rating=g";
+    // console.log('APIURL',URL);
     return axios.get(URL);
+  },
+
+  getRecipes: function(recipeName){
+    console.log('Recipe Name ', recipeName)
   }
 };

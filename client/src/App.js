@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Recipes from "./pages/Recipes";
 import WIMF from "./pages/WIMF";
+import { MuiThemeProvider } from 'material-ui/styles';
 
 class App extends Component {
   state = {
@@ -84,6 +85,7 @@ class App extends Component {
     const loggedIn = this.state.auth.isAuthenticated;
     return (
       <Router>
+      <MuiThemeProvider>
         <div>
         <Route exact path = "/" render = {()=> {
           if(loggedIn){
@@ -143,6 +145,7 @@ class App extends Component {
         }
         }/>
         </div>
+        </MuiThemeProvider>
       </Router>
     );
   }

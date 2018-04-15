@@ -23,9 +23,12 @@
     "create-react-class": "^15.6.3",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "material-ui": "^0.20.0",
     "mongoose": "^5.0.13",
     "passport": "^0.4.0",
     "passport-local-mongoose": "^5.0.0",
+    "react-albus": "^2.0.0",
+    "react-day-picker": "^7.1.4",
     "react-native-swipe-cards": "^0.1.1"
   }
 }

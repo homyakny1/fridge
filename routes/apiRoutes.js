@@ -4,7 +4,7 @@ const router = require("express").Router();
 const fridgeController = require("../controllers/fridgeController.js");
 
 router.route("/")
-  .get(fridgeController.findAll)
+  .get(fridgeController.getUserWithFridges)
   .post(fridgeController.create)
 
 router
