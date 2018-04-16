@@ -1,11 +1,10 @@
 import axios from "axios";
 import { ContentSelectAll } from "material-ui";
-const GIPHYURL = "https://api.giphy.com/v1/gifs/search?";
+const GIPHYURL = "https://api.giphy.com/v1/stickers/search?";
 const GIPHYAPIKEY = "api_key=h3ZfcokVkTszyvNg8AB93XpOtTMKzM7B";
 
-const YUMMLYURL = 'http://api.yummly.com/v1/recipes?';
-const YAMMLYAPPID ='_app_id=22821bab';
-const YAMMLYAPIKEY='&_app_key=aed0010220fcd1499bddfe34c263d253';
+const YAMMLYURL = 'http://api.yummly.com/v1/recipes?';
+const YAMMLYAPIKEY='_app_id=22821bab&_app_key=aed0010220fcd1499bddfe34c263d253&q=';
 
 //api.giphy.com/v1/gifs/search?api_key=h3ZfcokVkTszyvNg8AB93XpOtTMKzM7B&q=apple&limit=25&offset=0&rating=G&lang=en
 
@@ -40,5 +39,6 @@ export default {
 
   getRecipes: function(recipeName){
     console.log('Recipe Name ', recipeName)
+    const RecipesUrl = YAMMLYURL+YAMMLYAPIKEY+recipeName+'&requirePictures=true'
   }
 };

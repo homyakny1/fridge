@@ -2,8 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AddList from "../components/AddList";
-// import List from "../components/List";
-
+import './style.css';
 
 
 const Home = (props) => (

@@ -1,0 +1,9 @@
+body{
+    font-family: 'Archivo Narrow', sans-serif;
+}
+#fridge-photo{
+    width: 95vw;
+    box-shadow: 15px 15px 16px 10px rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0) !important;
+    margin-left: 2vw;
+    margin-top: 3vw;
+}

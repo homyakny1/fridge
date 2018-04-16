@@ -7,7 +7,7 @@ const Navbar = (props) =>{
 		<div className='NavBar'>
 		<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
 		<Link className="navbar-brand" to='/home'>
-		<img src="http://icons.iconarchive.com/icons/iconka/saint-whiskers/256/cat-fridge-icon.png" width="50" height="50" alt=""/>
+		<img src="https://www.shareicon.net/data/512x512/2016/08/18/814310_cold_512x512.png" width="62" height="62" alt=""/>
 		</Link>
 		<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		  <span className="navbar-toggler-icon"></span>

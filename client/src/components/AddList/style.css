@@ -1,5 +1,7 @@
 .card {
     text-align: center;
+    box-shadow: 0 3px 16px 0 rgba(29, 42, 233, 0.2),0 6px 20px 0 rgba(30, 98, 245, 0.19) !important;
+
 }
 
 h1 {
@@ -109,4 +111,11 @@ h1 {
     transition-timing-function: ease-in-out;
 }
 
+#itemForm{
+    margin-top: 3%;
+}
+
+input{
+    font-size: 3vh;
+}
 /*# sourceMappingURL=swipe-to-delete.css.map*/

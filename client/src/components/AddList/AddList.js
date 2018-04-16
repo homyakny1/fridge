@@ -13,7 +13,6 @@ class AddList extends Component {
 
   componentDidMount() {
     this.loadItems();
-
   }
 
   loadImages = topic => {
@@ -22,8 +21,7 @@ class AddList extends Component {
       .then(()=> this.addItem())
       .catch(err => console.log(err));
   };
-  // console.log(res.data.data[0].images.fixed_width.url)
-  //entering username and password
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState(
@@ -38,10 +36,6 @@ class AddList extends Component {
     event.preventDefault();
     this.loadImages(this.state.itemName);
   };
-
-  cancelCourse = () => { 
-    this.myFormRef.reset();
-  }
 
 
   addItem = () => {
@@ -62,10 +56,15 @@ class AddList extends Component {
        .then(res => this.setState({
           data: res.data.fridgeID
         })
-      )
+      ).then(() => this.setState({
+        itemName : ''
+      }))
       .catch(err => console.log(err));
   };
 
+  sendThru() {
+    this.itemName.value = "";
+}
   onDelete = id => {
     console.log('deleted')
     API.deleteItem(id)
@@ -81,8 +80,9 @@ class AddList extends Component {
       <div>
         <div className="row">
           <div className="col-sm-12">
-            <div className="input-group mb-3">
-              <input ref={(el) => this.myFormRef = el}
+          <form onSubmit = {this.handleSubmit} id='itemForm'>
+            <div className="form-group mb-3">
+              <input
                 type="text"
                 className="form-control"
                 placeholder="Add product"
@@ -90,17 +90,10 @@ class AddList extends Component {
                 value={this.state.itemName}
                 onChange={this.handleChange}
                 onSubmit = {this.handleSubmit}
+                ref={el => this.inputTitle = el}
               />
-              <div className="input-group-append">
-                <button
-                  className="btn btn-outline-secondary"
-                  type="button"
-                  onClick={this.handleSubmit}
-                >
-                  Add to list
-                </button>
-              </div>
             </div>
+            </form>
           </div>
         </div>
         <div className="row">
@@ -108,7 +101,7 @@ class AddList extends Component {
             {/* <List data = {this.state.data} onDelete = {this.onDelete} onCancel = {this.onCancel} /> */}
             <div className="panel panel-default">
               <ul className="list-group list-unstyled">
-                {this.state.data.length && this.state.data.map(item => (
+                {this.state.data.length ?( this.state.data.map(item => (
                   <SwipeToDelete
                     key={item._id}
                     tag="li"
@@ -117,18 +110,25 @@ class AddList extends Component {
                     onDelete={() => this.onDelete(item._id)}
                   >
                     <a className="list-group-item d-flex justify-content-between">
+                      <div style={{width:'20%', height:'20%', overflow:'hidden'}}>
                       <img
                         className="rounded"
                         src={item.img}
-                        alt='Image is not available'
-                      />
+                        alt='Not available'
+                        style={{width:'17vw', borderRadius:'50px'}}
+                      /></div>
                       <h4 className="text-uppercase">{item.itemName}</h4>
                       <p className="text-uppercase " style={{ color: "gray" }}>
                       {this.randomNumber}
                       </p>
                     </a>
                   </SwipeToDelete>
-                ))}
+                ))
+              ): (
+                <div style={{textAlign:'center'}}>
+                  <h3>Your shopping list is empty</h3>
+                </div>
+              )}
               </ul>
             </div>
           </div>

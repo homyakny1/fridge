@@ -9,3 +9,6 @@
 #navbarSupportedContent{
 text-align: end;
 }
+.NavBar{
+    box-shadow: 0 3px 16px 0 rgba(29, 42, 233, 0.2),0 6px 20px 0 rgba(30, 98, 245, 0.19) !important;
+}

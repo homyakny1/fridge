@@ -6,7 +6,7 @@ body {
   margin: 0 0 100px; /* bottom = footer height */
 }
   
-  .footer span {
+  .footer span{
     position: absolute;
     left: 0;
     bottom: 0;
@@ -14,4 +14,7 @@ body {
     text-align: center;
     background-color: #007bff86;
     color: #ede8e4;
+  }
+  .SMIcons{
+    width: 5vh;
   }
