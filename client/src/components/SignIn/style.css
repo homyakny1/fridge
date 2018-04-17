@@ -32,3 +32,12 @@ body{
 a{
     font-size: 20px;
 }
+
+
+.signin-form{
+    border-radius: 15px;
+    background-color: #c167ea;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 20px;
+    padding-bottom: 50px;
+}

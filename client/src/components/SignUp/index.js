@@ -15,7 +15,7 @@ const SignUp = (props)=> {
 			<div className='row'>
 				<div className = 'col-sm-3'></div>
 					<div className = 'center signin-div col-sm-6'>
-						<form name = "/auth/signup" onSubmit = {props.handleSubmit} className='signin-form'>
+						<form name = "/auth/signup" onSubmit = {props.handleSubmit} className='signup-form'>
 							<h1>REGISTER</h1>
 							<br/>
 							<div className='input-group-prepend'>
