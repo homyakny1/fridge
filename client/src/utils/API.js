@@ -1,10 +1,7 @@
 import axios from "axios";
-import { ContentSelectAll } from "material-ui";
-const GIPHYURL = "https://api.giphy.com/v1/stickers/search?";
+const GIPHYURL = "https://api.giphy.com/v1/gifs/search?";
 const GIPHYAPIKEY = "api_key=h3ZfcokVkTszyvNg8AB93XpOtTMKzM7B";
 
-const YAMMLYURL = 'http://api.yummly.com/v1/recipes?';
-const YAMMLYAPIKEY='_app_id=22821bab&_app_key=aed0010220fcd1499bddfe34c263d253&q=';
 
 //api.giphy.com/v1/gifs/search?api_key=h3ZfcokVkTszyvNg8AB93XpOtTMKzM7B&q=apple&limit=25&offset=0&rating=G&lang=en
 
@@ -30,15 +27,13 @@ export default {
 
 
   getImages: function(topic) {
-    console.log('API TOPIC',topic)
     const myQuery = "&q=" + topic;
     const URL = GIPHYURL + GIPHYAPIKEY + myQuery + "&limit=1&rating=g";
-    // console.log('APIURL',URL);
     return axios.get(URL);
   },
 
   getRecipes: function(recipeName){
-    console.log('Recipe Name ', recipeName)
-    const RecipesUrl = YAMMLYURL+YAMMLYAPIKEY+recipeName+'&requirePictures=true'
+    const RecipesUrl = "http://api.yummly.com/v1/api/recipes?_app_id=22821bab&_app_key=421162948dbe294a0c32d2aab37a610d&q="+recipeName+"&requirePictures=true"
+    return axios.get(RecipesUrl)
   }
 };

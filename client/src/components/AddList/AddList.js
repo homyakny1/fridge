@@ -61,10 +61,7 @@ class AddList extends Component {
       }))
       .catch(err => console.log(err));
   };
-
-  sendThru() {
-    this.itemName.value = "";
-}
+  
   onDelete = id => {
     console.log('deleted')
     API.deleteItem(id)
