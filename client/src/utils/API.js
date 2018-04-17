@@ -33,7 +33,7 @@ export default {
   },
 
   getRecipes: function(recipeName){
-    const RecipesUrl = "http://api.yummly.com/v1/api/recipes?_app_id=22821bab&_app_key=421162948dbe294a0c32d2aab37a610d&q="+recipeName+"&requirePictures=true"
+    const RecipesUrl = "https://api.yummly.com/v1/api/recipes?_app_id=22821bab&_app_key=421162948dbe294a0c32d2aab37a610d&q="+recipeName+"&requirePictures=true"
     return axios.get(RecipesUrl)
   }
 };
