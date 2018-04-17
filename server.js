@@ -7,6 +7,10 @@ const models = require("./models");
 const passport = require("passport");
 const session = require('express-session');
 
+// Use morgan logger for logging requests
+app.use(logger("dev"));
+
+
 // Configure body parser for AJAX requests
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -29,7 +33,7 @@ mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 //add mongo heroku uri
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/fridge-development"
+  process.env.MONGODB_URI || "mongodb://heroku_brpftw7r:berdovka0603@ds247699.mlab.com:47699/heroku_brpftw7r"
 );
 
 // Start the API server
