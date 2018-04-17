@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\homa_\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js remove react-swipe-to-delete-component
+  C:\Program Files\nodejs\node.exe C:\Users\homa_\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\homa_\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\QuickTime\QTSystem;C:\xampp\php;C:\Users\homa_\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\homa_\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\MongoDB\Server\3.6\bin
@@ -37,6 +37,7 @@ npm manifest:
     },
     "dependencies": {
       "create-react-class": "^15.6.3",
+      "dotenv": "^5.0.1",
       "express": "^4.16.3",
       "express-session": "^1.15.6",
       "mongoose": "^5.0.13",
@@ -987,6 +988,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
     dependencies:
       is-obj "^1.0.0"
+  
+  dotenv@^5.0.1:
+    version "5.0.1"
+    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-5.0.1.tgz#a5317459bd3d79ab88cff6e44057a6a3fbb1fcef"
   
   duplexer3@^0.1.4:
     version "0.1.4"
@@ -4258,10 +4263,18 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: This module isn't specified in a manifest.
-      at MessageError.Error (native)
-      at new MessageError (C:\Users\homa_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at Object.<anonymous> (C:\Users\homa_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:60445:15)
-      at next (native)
-      at step (C:\Users\homa_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
-      at C:\Users\homa_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:109:13
+  Error: Command failed.
+  Exit code: 1073807364
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c concurrently "nodemon server.js" "npm run client"
+  Directory: c:\Users\homa_\Desktop\BOOTCAMP\PROJECTS\fridge
+  Output:
+  
+      at ProcessTermError.Error (native)
+      at ProcessTermError.MessageError (C:\Users\homa_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Users\homa_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Users\homa_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
+      at emitTwo (events.js:106:13)
+      at ChildProcess.emit (events.js:191:7)
+      at maybeClose (internal/child_process.js:920:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
