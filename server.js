@@ -3,13 +3,11 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 3033;
 const models = require("./models");
-
+require('dotenv').config();
 const passport = require("passport");
 const session = require('express-session');
 
-// Use morgan logger for logging requests
-app.use(logger("dev"));
-
+app.set('port', (process.env.PORT || 1337));
 
 // Configure body parser for AJAX requests
 app.use(express.urlencoded({extended:true}));
