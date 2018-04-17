@@ -13,7 +13,7 @@ app.set('port', (process.env.PORT || 1337));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 // Serve up static assets
-app.use(express.static("client/build"));
+app.use(express.static("client/public"));
 
  // For Passport
 app.use(session({ secret: 'changeThis',resave: true, saveUninitialized:true})); // session secret
