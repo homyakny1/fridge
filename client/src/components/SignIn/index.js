@@ -11,6 +11,8 @@ const SignIn  = (props)=> {
 				<div className='col-sm-12 center'>
 				<br/>
 					<h1 className='title'>What's In My Fridge?</h1>
+					<br/>
+					<h5>Make grocery shopping easier</h5>
 				</div>
 			</div>
 			<div className='row'>

@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const PORT = process.env.PORT || 3033;
+const PORT = process.env.PORT || 3001;
 const models = require("./models");
 require('dotenv').config();
 const passport = require("passport");
@@ -32,6 +32,7 @@ mongoose.Promise = global.Promise;
 //add mongo heroku uri
 mongoose.connect(
   process.env.MONGODB_URI ||"mongodb://heroku_brpftw7r:berdovka0603@ds247699.mlab.com:47699/heroku_brpftw7r"
+  // "mongodb://heroku_brpftw7r:berdovka0603@ds247699.mlab.com:47699/heroku_brpftw7r"
   // "mongodb://localhost/fridge-development"
 
 );

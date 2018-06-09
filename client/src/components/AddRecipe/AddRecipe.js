@@ -44,6 +44,7 @@ class AddRecipe extends Component {
           <div className="col-sm-12">
             <ul>
               {this.state.recipeData.map(item => (
+                <div>
                 <section key={item.id} className="media mb-4" data-toggle="collapse" href={"#"+item.id+'recipe'} aria-expanded="false" aria-controls="collapseExample">
                   <img className=" mr-3 img-fluid rounded" src={item.smallImageUrls} alt=""/>
                   <div className="media-body">
@@ -58,7 +59,9 @@ class AddRecipe extends Component {
                     </ul>
                     </div>
                     <Rating value={item.rating}/>               
-                </section> 
+                </section>
+                <hr/>
+                </div>
               ))}
             </ul>
           </div>
